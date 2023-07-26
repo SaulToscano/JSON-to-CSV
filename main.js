@@ -2,6 +2,26 @@ const jsonForm = document.querySelector('#jsonform');
 const csvForm = document.querySelector('#csvform');
 const bConvert = document.querySelector('#bConvert');
 
+document.addEventListener("DOMContentLoaded", (e) => {
+  jsonForm.value = JSON.stringify(mockupValue());
+})
+
+
+function mockupValue() {
+  return [
+    {
+      user: 'john doe',
+      age: 26,
+      email: 'john.doe@imfake.com'
+    },
+    {
+      user: 'elizabeth fake',
+      age: 29,
+      email: 'elizabeth@unreal.com'
+    }
+  ]
+}
+
 bConvert.addEventListener('click', e => {
   convertJSONtoCSV();
 });
